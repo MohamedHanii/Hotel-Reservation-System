@@ -1,13 +1,14 @@
 var express = require("express");
 var app = express();
-
+app.use(express.static("public"));
+app.set("view engine","ejs");
 
 // http://localhost:3000/ Run from here
 
 
 // reg is object that 
 app.get("/", function (req,res){
-    res.send("Hi There!");
+    res.render("home");
 });
 app.get("/bye",function(req,res){
     res.send("goodbye!")
