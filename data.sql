@@ -5,21 +5,21 @@ create table users(
     PRIMARY KEY(username)
 );
 
-create  table `owner`(
+create  table `owners`(
     ownerID int not null AUTO_INCREMENT,
     username varchar(20),
     PRIMARY KEY(ownerID),
     FOREIGN KEY (username) REFERENCES `users`(username)
 );
 
-create  table `admin`(
+create  table `admins`(
     adminID int not null AUTO_INCREMENT,
     username varchar(20),
     PRIMARY KEY(adminID),
     FOREIGN KEY (username) REFERENCES `users`(username)
 );
 
-create  table `customer`(
+create  table `customers`(
     custID int not null AUTO_INCREMENT,
     username varchar(20),
     VIP boolean DEFAULT false,
@@ -29,7 +29,7 @@ create  table `customer`(
 );
 
 
-create table hotel(
+create table hotels(
 	hotelID int not null AUTO_INCREMENT,
     hotelLocation varchar(100) not null,
     hotelName varchar(100) not null,
@@ -42,7 +42,7 @@ create table hotel(
     FOREIGN KEY (ownerID) REFERENCES `owner`(ownerID)
 );
 
-create table hotel_room(
+create table rooms(
 	hotelID int not null,
     roomID int not null AUTO_INCREMENT,
     hotelName varchar(100) not null,

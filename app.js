@@ -4,6 +4,8 @@ var path = require("path");
 var mysql = require('mysql');
 var pageRouter = require("./routes/pages");
 
+var db = require("./core/database");
+
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,"public")));
